@@ -75,3 +75,18 @@ app.get("/greet", function(req, res){
 
     res.status(200).send(snippet).end();  
 })
+
+app.get("/age", function(req, res){
+    const currentYr = 2019; 
+    const birthYear = currentYr - req.query.age;
+   
+    let snippet = `<h1>You were born in ${birthYear}</h1>`; 
+    // if (!name) {
+    //     snippet = `<h1>No name provided</h1>`
+    //     res.status(500)
+    //     .send(snippet)
+    //     .end(); 
+    // }
+
+    res.status(200).send(snippet).end();  
+})
