@@ -9,13 +9,16 @@ const data = {
 };
 
 router.get("/", (req, res) => {
-    let json = {
-        data
-    }; 
-    
     res.status(200)
-        .send(json)
-        .end(); 
+        .render('template', {
+            locals: {
+                title: "A Listing of Rangers!", 
+                meetDog: data.meetDog
+            },
+            partials: {
+                partial: "partial-all"
+            }
+    })
 }); 
 
 module.exports = router; 
